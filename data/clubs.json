@@ -1,0 +1,92 @@
+{
+    "fall": {
+        "prompt": "You also decide to join a club that aligns with your interests. Which club do you join? Assume there is no comp process.",
+        "options": [
+            {
+                "name": "Harvard College Consulting Group",
+                "scores": {
+                    "laozi": 1,
+                    "xunzi": 1
+                }
+            },
+            {
+                "name": "Harvard Undergraduates for Environmental Justice",
+                "scores": {
+                    "laozi": 1,
+                    "mengzi": 1
+                }
+            },
+            {
+                "name": "Harvard Chemistry Club",
+                "scores": {
+                    "shangyang": 1,
+                    "xunzi": 1
+                }
+            },
+            {
+                "name": "Institute of Politics",
+                "scores": {
+                    "shangyang": 1,
+                    "mengzi": 1
+                }
+            },
+            {
+                "name": "Harvard-Radcliffe Science-Fiction Association",
+                "scores": {
+                    "zhuangzi": 1
+                }
+            },
+            {
+                "name": "Harvard Lampoon",
+                "scores": {
+                    "zhuangzi": 1
+                }
+            }
+        ]
+    },
+    "spring": {
+        "prompt": "You also decide to join a club that aligns with your interests. Which club do you join? Assume there is no comp process.",
+        "options": [
+            {
+                "name": "Harvard Financial Analysts Club",
+                "scores": {
+                    "shangyang": 1,
+                    "laozi": 1
+                }
+            },
+            {
+                "name": "Harvard Crimson",
+                "scores": {
+                    "laozi": 1
+                }
+            },
+            {
+                "name": "Harvard Undergraduate Clean Energy Group",
+                "scores": {
+                    "shangyang": 1,
+                    "mengzi": 1
+                }
+            },
+            {
+                "name": "Harvard Curling Club",
+                "scores": {
+                    "xunzi": 1,
+                    "zhuangzi": 1
+                }
+            },
+            {
+                "name": "Harvard-Radcliffe Modern Dance Troupe",
+                "scores": {
+                    "xunzi": 1
+                }
+            },
+            {
+                "name": "HackHarvard",
+                "scores": {
+                    "mengzi": 1,
+                    "zhuangzi": 1
+                }
+            }
+        ]
+    }
+}

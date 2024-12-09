@@ -1,0 +1,140 @@
+[
+    {
+        "prompt": "Two new weeks roll around. Which area would you like to emphasize the most?",
+        "options": [
+            {
+                "name": "Going to lectures, sections, and office hours",
+                "category_scores": {
+                    "school": 1,
+                    "fun": -1
+                },
+                "phil_scores": {
+                    "zhuangzi": 1
+                }
+            },
+            {
+                "name": "Doing homework",
+                "category_scores": {
+                    "school": 2,
+                    "fun": -1
+                },
+                "phil_scores": {
+                    "xunzi": 1,
+                    "shangyang": 1
+                }
+            },
+            {
+                "name": "Joining a new club",
+                "category_scores": {
+                    "fun": 2,
+                    "rest": -1
+                },
+                "phil_scores": {
+                    "mengzi": 1,
+                    "zhuangzi": 1
+                }
+            },
+            {
+                "name": "Putting in work for a club you’ve already joined",
+                "category_scores": {
+                    "fun": 2,
+                    "rest": -1
+                },
+                "phil_scores": {
+                    "mengzi": 1,
+                    "shangyang": 1
+                }
+            },
+            {
+                "name": "Going out with your friends",
+                "category_scores": {
+                    "fun": 2,
+                    "school": -1
+                },
+                "phil_scores": {
+                    "laozi": 1
+                }
+            },
+            {
+                "name": "Resting and relaxing",
+                "category_scores": {
+                    "rest": 2,
+                    "school": -1
+                },
+                "phil_scores": {
+                    "laozi": 1,
+                    "zhuangzi": 1
+                }
+            }
+        ]
+    },
+    {
+        "prompt": "Which other area would you like to emphasize these next two weeks?",
+        "options": [
+            {
+            "name": "Going to lectures, sections, and office hours",
+            "category_scores": {
+                "school": 1.5,
+                "fun": -0.5
+            },
+            "phil_scores": {
+                "xunzi": 1
+            }
+            },
+            {
+            "name": "Doing homework",
+            "category_scores": {
+                "school": 1.5,
+                "fun": -0.5
+            },
+            "phil_scores": {
+                "xunzi": 1,
+                "shangyang": 1
+            }
+            },
+            {
+            "name": "Joining a new club",
+            "category_scores": {
+                "fun": 1.5,
+                "rest": -0.5
+            },
+            "phil_scores": {
+                "mengzi": 1,
+                "zhuangzi": 1
+            }
+            },
+            {
+            "name": "Putting in work for a club you’ve already joined",
+            "category_scores": {
+                "fun": 1.5,
+                "rest": -0.5
+            },
+            "phil_scores": {
+                "mengzi": 1,
+                "shangyang": 1
+            }
+            },
+            {
+            "name": "Going out with your friends",
+            "category_scores": {
+                "fun": 1.5,
+                "school": -0.5
+            },
+            "phil_scores": {
+                "laozi": 1
+            }
+            },
+            {
+            "name": "Resting and relaxing",
+            "category_scores": {
+                "rest": 1.5,
+                "school": -0.5
+            },
+            "phil_scores": {
+                "laozi": 1,
+                "zhuangzi": 1
+            }
+            }
+        ]
+    }
+]

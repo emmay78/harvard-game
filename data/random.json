@@ -1,0 +1,231 @@
+[
+    {
+        "prompt": "You’ve got an assignment due on Friday night! What do you do?",
+        "day": "WEDNESDAY",
+        "options": [
+            {
+                "name": "Start immediately and think about nothing else for the next two days.",
+                "scores": {
+                    "xunzi": 1,
+                    "shangyang": 1
+                }
+            },
+            {
+                "name": "Schedule time to work on it in your calendar tonight.",
+                "scores": {
+                    "xunzi": 1,
+                    "mengzi": 1
+                }
+            },
+            {
+                "name": "Take a long walk along the river to start pondering the assignment.",
+                "scores": {
+                    "zhuangzi": 1,
+                    "laozi": 1
+                }
+            },
+            {
+                "name": "Text your pset buddies and plan a work session with them.",
+                "scores": {
+                    "mengzi": 1
+                }
+            },
+            {
+                "name": "Do an assignment for a different class to make sure you’re not thinking about this one excessively.",
+                "scores": {
+                    "shangyang": 1,
+                    "zhuangzi": 1
+                }
+            },
+            {
+                "name": "Push it out of your mind until Friday night: the Way will guide you to the right moment to start.",
+                "scores": {
+                    "laozi": 1
+                }
+            }
+        ]
+    },
+    {
+        "prompt": "You’ve got a relatively heavy workload this week from one of the clubs you joined, and you need to get it done by the end of the night. What do you do? (Be honest!)",
+        "day": "FRIDAY",
+        "options": [
+            {
+                "name": "Cancel the plans you made with your friends for the evening.",
+                "scores": {
+                    "zhuangzi": 1
+                }
+            },
+            {
+                "name": "Email your TF from one of your classes to take an extension on an upcoming assignment.",
+                "scores": {
+                    "xunzi": 1,
+                    "mengzi": 1
+                }
+            },
+            {
+                "name": "Mail it in—your work is far from your best, but at least it’s done…kind of.",
+                "scores": {
+                    "laozi": 1
+                }
+            },
+            {
+                "name": "Text your friends from the club to see if they can help you finish the task on time.",
+                "scores": {
+                    "mengzi": 1
+                }
+            },
+            {
+                "name": "Don’t finish the task on time—it’s not graded, and there’s always next week!",
+                "scores": {
+                    "laozi": 1,
+                    "zhuangzi": 1
+                }
+            },
+            {
+                "name": "Plan ahead meticulously so you already finished the task the day after it was announced.",
+                "scores": {
+                    "xunzi": 1,
+                    "shangyang": 1
+                }
+            }
+        ]
+    },
+    {
+        "prompt": "You’ve been assigned a group project! What do you do?",
+        "day": "THURSDAY",
+        "options": [
+            {
+                "name": "Start assigning tasks to everyone in the group.",
+                "scores": {
+                    "shangyang": 1,
+                    "mengzi": 1
+                }
+            },
+            {
+                "name": "Don’t make any bold moves and wait for someone else to take the lead.",
+                "scores": {
+                    "laozi": 1,
+                    "shangyang": 1
+                }
+            },
+            {
+                "name": "Pretend to be sick and let your teammates do all the work.",
+                "scores": {
+                    "zhuangzi": 1,
+                    "xunzi": 1
+                }
+            },
+            {
+                "name": "Do the whole project by yourself—you can’t trust that anyone will do as good of a job as you will.",
+                "scores": {
+                    "xunzi": 1,
+                    "zhuangzi": 1
+                }
+            },
+            {
+                "name": "Do it all on the night before it’s due.",
+                "scores": {
+                    "laozi": 1
+                }
+            },
+            {
+                "name": "Help your teammates with their parts.",
+                "scores": {
+                    "mengzi": 1
+                }
+            }
+        ]
+    },
+    {
+        "prompt": "Your club is holding its weekly board meeting! The presidents will be considering board members for promotions at the end of the semester.",
+        "day": "SATURDAY",
+        "options": [
+            {
+                "name": "Sit back, relax, and listen to what others have to say.",
+                "scores": {
+                    "laozi": 1,
+                    "zhuangzi": 1
+                }
+            },
+            {
+                "name": "Lead a collaborative brainstorming session for the club’s next initiatives.",
+                "scores": {
+                    "mengzi": 1,
+                    "xunzi": 1
+                }
+            },
+            {
+                "name": "Lobby the presidents before the meeting to highlight your contributions and secure your promotion.",
+                "scores": {
+                    "zhuangzi": 1,
+                    "shangyang": 1
+                }
+            },
+            {
+                "name": "Follow your intuition: weigh in when it feels right.",
+                "scores": {
+                    "laozi": 1
+                }
+            },
+            {
+                "name": "Make sure throughout the meeting that everyone’s ideas are aligning with all the school rules and protocols.",
+                "scores": {
+                    "shangyang": 1,
+                    "xunzi": 1
+                }
+            },
+            {
+                "name": "Suggest activities that align with the true innate interests of the club members based on your experience.",
+                "scores": {
+                    "mengzi": 1
+                }
+            }
+        ]
+    },
+    {
+        "prompt": "You’ve been assigned to lead a team project for your club. How do you manage the project?",
+        "day": "SATURDAY",
+        "options": [
+            {
+                "name": "Be honest about your concerns for the project and seek the opinions of your teammates.",
+                "scores": {
+                    "mengzi": 1
+                }
+            },
+            {
+                "name": "Follow the lead of the club president and do exactly what they expect you to do.",
+                "scores": {
+                    "shangyang": 1,
+                    "xunzi": 1
+                }
+            },
+            {
+                "name": "Delegate responsibilities and assign strict deadlines for your team.",
+                "scores": {
+                    "xunzi": 1,
+                    "shangyang": 1
+                }
+            },
+            {
+                "name": "Let everyone do their part however they want–you trust them!",
+                "scores": {
+                    "laozi": 1,
+                    "zhuangzi": 1
+                }
+            },
+            {
+                "name": "Assign parts of the project based on each person’s interests and strengths.",
+                "scores": {
+                    "zhuangzi": 1,
+                    "laozi": 1
+                }
+            },
+            {
+                "name": "Encourage maximal collaboration between team members.",
+                "scores": {
+                    "mengzi": 1
+                }
+            }
+        ]
+    }
+]

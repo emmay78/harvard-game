@@ -1,0 +1,102 @@
+{
+    "fall": {
+        "prompt": "You need to select your classes for the fall semester. Which classes will you take? Select 2 from the following. No courses have any prerequisites, and you don’t need to fulfill the requirements of any concentration. Just pick what speaks to you.",
+        "options": [
+            {
+                "name": "Organismic and Evolutionary Biology 52. Biology of Plants. Holbrook",
+                "scores": {
+                    "mengzi": 1,
+                    "shangyang": 1
+                }
+            },
+            {
+                "name": "CS 1240. Data Structures and Algorithms. Sudan + 1",
+                "scores": {
+                    "xunzi": 1,
+                    "mengzi": 1
+                }
+            },
+            {
+                "name": "GenEd 1091. Classical Chinese Political & Ethical Theory. Puett",
+                "scores": {
+                    "mengzi": 1,
+                    "xunzi": 1,
+                    "zhuangzi": 1,
+                    "shangyang": 1,
+                    "laozi": 1
+                }
+            },
+            {
+                "name": "Government 20. Foundations in Comparative Politics.",
+                "scores": {
+                    "shangyang": 1,
+                    "laozi": 1
+                }
+            },
+            {
+                "name": "Latin 1. Introductory Latin. Livingston.",
+                "scores": {
+                    "xunzi": 1,
+                    "zhuangzi": 1
+                }
+            },
+            {
+                "name": "Humanities 20. Colloquium in the Visual Arts. Lippit + 4.",
+                "scores": {
+                    "zhuangzi": 1,
+                    "laozi": 1
+                }
+            }
+        ]
+    },
+    "spring": {
+        "prompt": "You need to select your classes for the spring semester. Which classes will you take? Select 2 from the following. No courses have any prerequisites, and you don’t need to fulfill the requirements of any concentration. Just pick what speaks to you.",
+        "options": [
+            {
+                "name": "Religion 116. The Conduct of Life in Eastern and Western Philosophy. Puett",
+                "scores": {
+                    "mengzi": 1,
+                    "xunzi": 1,
+                    "zhuangzi": 1,
+                    "shangyang": 1,
+                    "laozi": 1
+                }
+            },
+            {
+                "name": "Economics 1010a. Intermediate Microeconomics. Melitz",
+                "scores": {
+                    "xunzi": 1,
+                    "mengzi": 1
+                }
+            },
+            {
+                "name": "Physics 143a. Quantum Mechanics I. Deslauriers",
+                "scores": {
+                    "zhuangzi": 1,
+                    "laozi": 1
+                }
+            },
+            {
+                "name": "General Education 1056. Human Nature. Henrich",
+                "scores": {
+                    "xunzi": 1,
+                    "mengzi": 1
+                }
+            },
+            {
+                "name": "Earth and Planetary Science 168. Human Environmental Data Science: Agriculture, Conflict, and Health. Huybers",
+                "scores": {
+                    "shangyang": 1,
+                    "laozi": 1
+                }
+            },
+            {
+                "name": "Comparative Literature 110x. What is a Novel?",
+                "scores": {
+                    "zhuangzi": 1,
+                    "xunzi": 1
+                }
+            }
+        ]
+    }
+}

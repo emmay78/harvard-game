@@ -2,11 +2,12 @@ import pygame
 from functools import partial
 from constants import *
 import ptext
+from typing import Dict, List, Optional
 
 # INIT SCREENS
 
 
-def draw_title(window):
+def draw_title(window: pygame.Surface) -> None:
     """
     Draws the Welcome title of the game.
     """
@@ -17,7 +18,7 @@ def draw_title(window):
     window.blit(text, text.get_rect(center=box.center))
 
 
-def draw_init_text_1(window):
+def draw_init_text_1(window: pygame.Surface) -> None:
     text = """Congratulations! You’ve been admitted to Harvard College. A transformative year-long experience awaits you."""
     ptext.drawbox(
         text,
@@ -28,7 +29,7 @@ def draw_init_text_1(window):
     )
 
 
-def draw_init_text_2(window):
+def draw_init_text_2(window: pygame.Surface) -> None:
     text = """You've moved into your dorm: a double overlooking Harvard Yard. Your suitemates seem nice, and you hope they’ll become good friends. You’re looking forward to starting classes, joining clubs, and exploring the social scene, all while maintaining a healthy school-life balance."""
     ptext.drawbox(
         "SEVERAL  MONTHS LATER...",
@@ -46,7 +47,7 @@ def draw_init_text_2(window):
     )
 
 
-def draw_init_text_3(window):
+def draw_init_text_3(window: pygame.Surface) -> None:
     text = """...you can’t help but feel like your forthcoming decisions are being watched over closely by spirits from the ancient past..."""
 
     ptext.drawbox(
@@ -58,7 +59,7 @@ def draw_init_text_3(window):
     )
 
 
-def draw_next_button(window):
+def draw_next_button(window: pygame.Surface) -> None:
     font = FONT(30)
     text = font.render("GREAT NEWS! LET'S GO!", True, Color.BLACK.value)
 
@@ -76,7 +77,7 @@ def draw_next_button(window):
     )
 
 
-def draw_interesting_button(window):
+def draw_interesting_button(window: pygame.Surface) -> None:
     font = FONT(30)
     text = font.render("HM, INTERESTING...", True, Color.BLACK.value)
 
@@ -97,42 +98,35 @@ def draw_interesting_button(window):
 # INFO BOARDS
 
 
-def draw_top_scoreboard(window, scores):
+def draw_top_scoreboard(window: pygame.Surface, scores: Dict[str, int]) -> None:
     # Bounding box
     pygame.draw.rect(window, Color.RED.value, (0, 0, 908, 62))
 
     # Scores
     ptext.drawbox(
         f"SCHOOL\t{scores['school']}",
-        (21, 15, 250, 30),
+        (80, 15, 250, 30),
         align="center",
         color=Color.BLACK.value,
         fontname=PTEXT_FONT,
     )
     ptext.drawbox(
         f"FUN\t{scores['fun']}",
-        (241, 15, 250, 30),
-        align="center",
-        color=Color.BLACK.value,
-        fontname=PTEXT_FONT,
-    )
-    ptext.drawbox(
-        f"CLUBS\t{scores['clubs']}",
-        (456, 15, 250, 30),
+        (335, 15, 250, 30),
         align="center",
         color=Color.BLACK.value,
         fontname=PTEXT_FONT,
     )
     ptext.drawbox(
         f"REST\t{scores['rest']}",
-        (673, 15, 250, 30),
+        (590, 15, 250, 30),
         align="center",
         color=Color.BLACK.value,
         fontname=PTEXT_FONT,
     )
 
 
-def draw_bottom_scoreboard(window, scores):
+def draw_bottom_scoreboard(window: pygame.Surface, scores: Dict[str, int]) -> None:
     # Bounding box
     pygame.draw.rect(window, Color.BLUE.value, (0, 637, 908, 75))
 
@@ -178,7 +172,7 @@ def draw_bottom_scoreboard(window, scores):
     )
 
 
-def draw_time_counter(window, week, day):
+def draw_time_counter(window: pygame.Surface, week: int, day: int) -> None:
     ptext.drawbox(
         f"WEEK: {week}",
         (7, 76, 141, 35),
@@ -196,19 +190,31 @@ def draw_time_counter(window, week, day):
     )
 
 
-def draw_course_selection(window, selection):
-    def draw_button(x, y, idx, course):
-        box = pygame.draw.rect(
-            window, Color.GREEN.value, (x, y, 397, 71), border_radius=40
-        )
-        ptext.drawbox(
-            course,
-            (x + 99, y + 13, 260, 38),
-            align="center",
-            color=Color.BLACK.value,
-            fontname=PTEXT_FONT,
-        )
-        num_box = pygame.draw.rect(
+def draw_interactive_selection(
+    window: pygame.Surface,
+    options: Dict[str, List[Dict[str, str]]],
+    selection: Optional[List[int]],
+) -> None:
+    def draw_button(x: int, y: int, idx: int, object: str) -> None:
+        pygame.draw.rect(window, Color.GREEN.value, (x, y, 397, 71), border_radius=40)
+        if len(object) < 25:
+            ptext.draw(
+                object,
+                (x + 90, y + 18),
+                color=Color.BLACK.value,
+                fontname=PTEXT_FONT,
+                fontsize=22,
+                align="left",
+            )
+        else:
+            ptext.drawbox(
+                object,
+                (x + 90, y + 10, 265, 45),
+                align="left",
+                color=Color.BLACK.value,
+                fontname=PTEXT_FONT,
+            )
+        pygame.draw.rect(
             window,
             Color.GREY.value if idx not in selection else Color.RED.value,
             (x + 29, y + 17, 32, 32),
@@ -230,12 +236,11 @@ def draw_course_selection(window, selection):
         (483, 465),
     ]
 
-    for idx, (course, (x, y)) in enumerate(zip(courses, coordinates)):
-        draw_button(x, y, idx + 1, course)
+    for idx, (object, (x, y)) in enumerate(zip(options["options"], coordinates)):
+        draw_button(x, y, idx + 1, object["name"])
 
-    select_class = """You need to select your classes for the semester. Which classes will you take? Select 4 from the following. None have any prerequisites."""
     ptext.drawbox(
-        select_class,
+        options["prompt"],
         (26, 127, 849, 100),
         align="center",
         color=Color.BLACK.value,
@@ -254,7 +259,7 @@ def draw_course_selection(window, selection):
         window, Color.SEAGREEN.value, (309, 564, 292, 44), border_radius=40
     )
     ptext.drawbox(
-        "ENROLL",
+        "CONTINUE",
         (323, 570, 263, 31),
         align="center",
         color=Color.BLACK.value,

@@ -1,5 +1,7 @@
 import os
+import json
 import pygame
+import random
 from enum import Enum
 from graphics import *
 from constants import *
@@ -17,7 +19,6 @@ class GameState(Enum):
 category_scores = {
     "school": 0,
     "fun": 0,
-    "clubs": 0,
     "rest": 0,
 }
 
@@ -39,13 +40,29 @@ clock = pygame.time.Clock()
 
 running = True
 current_state = GameState.INIT_0
-week = 1
-day = "MONDAY"
+week = 0
+day = "SUNDAY"
 
-course_selection = []
+# Read JSON files
+with open("data/courses.json") as f:
+    courses = json.load(f)
 
-colors = [(0, 0, 255), (169, 221, 214), (122, 139, 153), (145, 173, 194)]
-color = colors[0]
+with open("data/clubs.json") as f:
+    clubs = json.load(f)
+
+with open("data/global.json") as f:
+    global_options = json.load(f)
+
+with open("data/random.json") as f:
+    random_options = json.load(f)
+
+# Game state
+current_course_selection = []
+current_club_selection = []
+current_selection = []
+courses_enrolled = False
+choice = 0
+
 while running:
     window.fill(Color.LINEN.value)
     if current_state == GameState.INIT_0:
@@ -72,51 +89,63 @@ while running:
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN:
-                    current_state = GameState.COURSES
-    elif current_state == GameState.COURSES:
-        draw_top_scoreboard(window, category_scores)
-        draw_time_counter(window, week, day)
-        draw_bottom_scoreboard(window, phil_scores)
-        if week == 1:
-            draw_course_selection(window, course_selection)
-            for event in pygame.event.get():
-                if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_1:
-                        if 1 not in course_selection and len(course_selection) < 4:
-                            course_selection.append(1)
-                        elif 1 in course_selection:
-                            course_selection.remove(1)
-                    elif event.key == pygame.K_2:
-                        if 2 not in course_selection and len(course_selection) < 4:
-                            course_selection.append(2)
-                        elif 2 in course_selection:
-                            course_selection.remove(2)
-                    elif event.key == pygame.K_3:
-                        if 3 not in course_selection and len(course_selection) < 4:
-                            course_selection.append(3)
-                        elif 3 in course_selection:
-                            course_selection.remove(3)
-                    elif event.key == pygame.K_4:
-                        if 4 not in course_selection and len(course_selection) < 4:
-                            course_selection.append(4)
-                        elif 4 in course_selection:
-                            course_selection.remove(4)
-                    elif event.key == pygame.K_5:
-                        if 5 not in course_selection and len(course_selection) < 4:
-                            course_selection.append(5)
-                        elif 5 in course_selection:
-                            course_selection.remove(5)
-                    elif event.key == pygame.K_6:
-                        if 6 not in course_selection and len(course_selection) < 4:
-                            course_selection.append(6)
-                        elif 6 in course_selection:
-                            course_selection.remove(6)
-                    elif event.key == pygame.K_RETURN:
-                        current_state = GameState.PLAY
+                    current_state = GameState.PLAY
     elif current_state == GameState.PLAY:
         draw_top_scoreboard(window, category_scores)
         draw_time_counter(window, week, day)
         draw_bottom_scoreboard(window, phil_scores)
+        if week == 0 or week == 8:
+            # Join courses and clubs
+            if not courses_enrolled:
+                options = courses["fall" if week == 0 else "spring"]
+                draw_interactive_selection(window, options, current_course_selection)
+                done = get_keyboard_selection(current_course_selection, True, 4)
+                if done:
+                    for idx in current_course_selection:
+                        course_scores = options["options"][idx - 1]["scores"]
+                        update_scores(phil_scores, course_scores)
+                        current_course_selection = []
+                        courses_enrolled = True
+            else:
+                options = clubs["fall" if week == 0 else "spring"]
+                draw_interactive_selection(window, options, current_club_selection)
+                done = get_keyboard_selection(current_club_selection, True, 1)
+                if done:
+                    club_scores = options["options"][current_club_selection[0] - 1][
+                        "scores"
+                    ]
+                    update_scores(phil_scores, club_scores)
+                    current_club_selection = []
+                    week += 1
+                    day = "MONDAY"
+        else:
+            # Global options
+            if choice <= 1:
+                options = global_options[choice]
+                draw_interactive_selection(window, options, current_course_selection)
+                done = get_keyboard_selection(current_course_selection, True, 1)
+                if done:
+                    for idx in current_course_selection:
+                        for key, score_dict in zip(
+                            ["category_scores", "phil_scores"],
+                            [category_scores, phil_scores],
+                        ):
+                            course_scores = options["options"][idx - 1][key]
+                            update_scores(score_dict, course_scores)
+                    choice += 1
+                    current_course_selection = []
+                    random_event = random.choice(random_options)
+                    day = random_event["day"]
+                    # TODO SHOW STATUS
+            else:
+                draw_interactive_selection(window, random_event, current_selection)
+                done = get_keyboard_selection(current_selection, True, 1)
+                if done:
+                    scores = options["options"][current_selection[0] - 1][key]
+                    update_scores(phil_scores, scores)
+                    week += 1
+                    choice = 0
+                    current_selection = []
 
     pygame.display.update()
     clock.tick(30)
