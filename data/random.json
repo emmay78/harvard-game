@@ -1,6 +1,6 @@
 [
     {
-        "prompt": "You’ve got an assignment due on Friday night! What do you do?",
+        "prompt": "You've got an assignment due on Friday night! What do you do?",
         "day": "WEDNESDAY",
         "options": [
             {
@@ -31,7 +31,7 @@
                 }
             },
             {
-                "name": "Do an assignment for a different class to make sure you’re not thinking about this one excessively.",
+                "name": "Do an assignment for a different class to make sure you're not thinking about this one excessively.",
                 "scores": {
                     "shangyang": 1,
                     "zhuangzi": 1
@@ -46,7 +46,7 @@
         ]
     },
     {
-        "prompt": "You’ve got a relatively heavy workload this week from one of the clubs you joined, and you need to get it done by the end of the night. What do you do? (Be honest!)",
+        "prompt": "You've got a relatively heavy workload this week from one of the clubs you joined, and you need to get it done by the end of the night. What do you do? (Be honest!)",
         "day": "FRIDAY",
         "options": [
             {
@@ -63,7 +63,7 @@
                 }
             },
             {
-                "name": "Mail it in—your work is far from your best, but at least it’s done…kind of.",
+                "name": "Mail it in—your work is far from your best, but at least it's done…kind of.",
                 "scores": {
                     "laozi": 1
                 }
@@ -75,7 +75,7 @@
                 }
             },
             {
-                "name": "Don’t finish the task on time—it’s not graded, and there’s always next week!",
+                "name": "Don't finish the task on time—it's not graded, and there's always next week!",
                 "scores": {
                     "laozi": 1,
                     "zhuangzi": 1
@@ -91,7 +91,7 @@
         ]
     },
     {
-        "prompt": "You’ve been assigned a group project! What do you do?",
+        "prompt": "You've been assigned a group project! What do you do?",
         "day": "THURSDAY",
         "options": [
             {
@@ -102,7 +102,7 @@
                 }
             },
             {
-                "name": "Don’t make any bold moves and wait for someone else to take the lead.",
+                "name": "Don't make any bold moves and wait for someone else to take the lead.",
                 "scores": {
                     "laozi": 1,
                     "shangyang": 1
@@ -116,14 +116,14 @@
                 }
             },
             {
-                "name": "Do the whole project by yourself—you can’t trust that anyone will do as good of a job as you will.",
+                "name": "Do the whole project by yourself—you can't trust that anyone will do as good of a job as you will.",
                 "scores": {
                     "xunzi": 1,
                     "zhuangzi": 1
                 }
             },
             {
-                "name": "Do it all on the night before it’s due.",
+                "name": "Do it all on the night before it's due.",
                 "scores": {
                     "laozi": 1
                 }
@@ -148,7 +148,7 @@
                 }
             },
             {
-                "name": "Lead a collaborative brainstorming session for the club’s next initiatives.",
+                "name": "Lead a collaborative brainstorming session for the club's next initiatives.",
                 "scores": {
                     "mengzi": 1,
                     "xunzi": 1
@@ -168,7 +168,7 @@
                 }
             },
             {
-                "name": "Make sure throughout the meeting that everyone’s ideas are aligning with all the school rules and protocols.",
+                "name": "Make sure throughout the meeting that everyone's ideas are aligning with all the school rules and protocols.",
                 "scores": {
                     "shangyang": 1,
                     "xunzi": 1
@@ -183,7 +183,7 @@
         ]
     },
     {
-        "prompt": "You’ve been assigned to lead a team project for your club. How do you manage the project?",
+        "prompt": "You've been assigned to lead a team project for your club. How do you manage the project?",
         "day": "SATURDAY",
         "options": [
             {
@@ -214,7 +214,7 @@
                 }
             },
             {
-                "name": "Assign parts of the project based on each person’s interests and strengths.",
+                "name": "Assign parts of the project based on each person's interests and strengths.",
                 "scores": {
                     "zhuangzi": 1,
                     "laozi": 1

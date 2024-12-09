@@ -1,6 +1,6 @@
 [
     {
-        "prompt": "Two new weeks roll around. Which area would you like to emphasize the most?",
+        "prompt": "A new week rolls around. Which area would you like to emphasize the most?",
         "options": [
             {
                 "name": "Going to lectures, sections, and office hours",
@@ -69,7 +69,7 @@
         ]
     },
     {
-        "prompt": "Which other area would you like to emphasize these next two weeks?",
+        "prompt": "Which other area would you like to emphasize this week?",
         "options": [
             {
             "name": "Going to lectures, sections, and office hours",
