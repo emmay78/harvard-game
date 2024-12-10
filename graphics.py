@@ -59,6 +59,18 @@ def draw_init_text_3(window: pygame.Surface) -> None:
     )
 
 
+def draw_init_text_4(window: pygame.Surface) -> None:
+    text = """This is a keyboard-based game! Use the numbers on your keyboard to select options. Press ENTER or SPACE to confirm your selection."""
+
+    ptext.drawbox(
+        text,
+        (72, 300, 763, 131),
+        align="center",
+        color=Color.BLACK.value,
+        fontname=PTEXT_FONT,
+    )
+
+
 def draw_next_button(window: pygame.Surface) -> None:
     font = FONT(30)
     text = font.render("GREAT NEWS! LET'S GO!", True, Color.BLACK.value)
@@ -268,6 +280,36 @@ def draw_interactive_selection(
     ptext.drawbox(
         "PRESS ENTER OR SPACE",
         (620, 570, 163, 30),
+        align="center",
+        color=Color.BLACK.value,
+        fontname=PTEXT_FONT,
+    )
+
+
+def draw_warning(window, message, button):
+    pygame.draw.rect(window, Color.YELLOW.value, (212, 205, 487, 290), border_radius=25)
+
+    ptext.drawbox(
+        message,
+        (237, 238, 435, 144),
+        align="center",
+        color=Color.BLACK.value,
+        fontname=PTEXT_FONT,
+    )
+
+    pygame.draw.rect(
+        window, Color.SEAGREEN.value, (304, 397, 292, 44), border_radius=40
+    )
+    ptext.drawbox(
+        button,
+        (319, 403, 263, 31),
+        align="center",
+        color=Color.BLACK.value,
+        fontname=PTEXT_FONT,
+    )
+    ptext.drawbox(
+        "PRESS ENTER OR SPACE",
+        (298, 448, 307, 17),
         align="center",
         color=Color.BLACK.value,
         fontname=PTEXT_FONT,

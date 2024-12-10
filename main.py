@@ -11,12 +11,19 @@ class GameState(Enum):
     INIT_0 = 1
     INIT_1 = 2
     INIT_2 = 3
+    INIT_3 = 7
     PLAY = 4
     COURSES = 5
     STATUS = 6
 
 
 category_scores = {
+    "school": 0,
+    "fun": 0,
+    "rest": 0,
+}
+
+category_warning_count = {
     "school": 0,
     "fun": 0,
     "rest": 0,
@@ -56,12 +63,16 @@ with open("data/global.json") as f:
 with open("data/random.json") as f:
     random_options = json.load(f)
 
+with open("data/warnings.json") as f:
+    warnings = json.load(f)
+
 # Game state
 current_course_selection = []
 current_club_selection = []
 current_selection = []
 courses_enrolled = False
 choice = 0
+displaying_warning = False
 
 while running:
     window.fill(Color.LINEN.value)
@@ -86,6 +97,14 @@ while running:
         draw_title(window)
         draw_init_text_3(window)
         draw_interesting_button(window)
+        for event in pygame.event.get():
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RETURN or event.key == pygame.K_SPACE:
+                    current_state = GameState.INIT_3
+    elif current_state == GameState.INIT_3:
+        draw_title(window)
+        draw_init_text_4(window)
+        draw_next_button(window)
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN or event.key == pygame.K_SPACE:
@@ -126,6 +145,52 @@ while running:
             if choice <= 1:
                 options = global_options[choice]
                 draw_interactive_selection(window, options, current_course_selection)
+                # Show status if threshold exceeded
+                if displaying_warning:
+                    if (
+                        category_scores["school"] < 0
+                        and category_warning_count["school"] == 0
+                    ) or (
+                        category_scores["school"] < -5
+                        and category_warning_count["school"] == 1
+                    ):
+                        draw_warning(
+                            window,
+                            warnings["school"][category_warning_count["school"]],
+                            "GOT IT",
+                        )
+                        for event in pygame.event.get():
+                            if event.type == pygame.KEYDOWN:
+                                if (
+                                    event.key == pygame.K_RETURN
+                                    or event.key == pygame.K_SPACE
+                                ):
+                                    category_warning_count["school"] += 1
+                                    choice += 1
+                                    current_course_selection = []
+                                    random_event = random.choice(random_options)
+                                    displaying_warning = False
+                    elif (
+                        category_scores["school"] <= -10
+                        and category_warning_count["school"] == 2
+                    ):
+                        draw_warning(
+                            window,
+                            warnings["school"][category_warning_count["school"]],
+                            "GAME OVER",
+                        )
+                        for event in pygame.event.get():
+                            if event.type == pygame.KEYDOWN:
+                                if (
+                                    event.key == pygame.K_RETURN
+                                    or event.key == pygame.K_SPACE
+                                ):
+                                    running = False
+                    else:
+                        choice += 1
+                        current_course_selection = []
+                        random_event = random.choice(random_options)
+                        displaying_warning = False
                 done = get_keyboard_selection(current_course_selection, True, 1)
                 if done:
                     for idx in current_course_selection:
@@ -135,10 +200,7 @@ while running:
                         ):
                             course_scores = options["options"][idx - 1][key]
                             update_scores(score_dict, course_scores)
-                    choice += 1
-                    current_course_selection = []
-                    random_event = random.choice(random_options)
-                    # TODO SHOW STATUS
+                    displaying_warning = True
             else:
                 day = random_event["day"]
                 draw_interactive_selection(window, random_event, current_selection)
@@ -149,6 +211,13 @@ while running:
                     week += 1
                     choice = 0
                     current_selection = []
+        else:
+            # End game
+            draw_end_game(window)
+            for event in pygame.event.get():
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_RETURN or event.key == pygame.K_SPACE:
+                        running = False
 
     pygame.display.update()
     clock.tick(30)

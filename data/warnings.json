@@ -1,0 +1,12 @@
+{
+    "school": [
+        "You haven’t been focusing much on your schoolwork lately. You begin to worry about your grades.",
+        "You have been truant from your schoolwork. Your grades are quite poor.",
+        "You have failed your courses. You’ll have to start the year from scratch."
+    ],
+    "fun": [
+        "You haven’t hung out with your friends much lately. You begin to feel lonely.",
+        "You don’t have many friends. You feel isolated and solitary.",
+        "You are a social outcast. You feel the need to take a leave, spend some time at home, and start the year again on a new foot."
+    ]
+}

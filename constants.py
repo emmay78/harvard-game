@@ -18,6 +18,7 @@ class Color(Enum):
     GREEN = (177, 214, 144)
     SEAGREEN = (46, 196, 182)
     GREY = (217, 217, 217)
+    YELLOW = (255, 180, 0)
 
 
 def update_scores(scores, add):
