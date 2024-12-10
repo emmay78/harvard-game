@@ -190,7 +190,7 @@ def draw_time_counter(window: pygame.Surface, week: int, day: int) -> None:
         (7, 76, 141, 35),
         align="center",
         color=Color.BLACK.value,
-        fontname=PTEXT_BOLD_FONT,
+        fontname=PTEXT_FONT,
     )
 
     ptext.drawbox(
@@ -198,7 +198,7 @@ def draw_time_counter(window: pygame.Surface, week: int, day: int) -> None:
         (700, 76, 189, 35),
         align="center",
         color=Color.BLACK.value,
-        fontname=PTEXT_BOLD_FONT,
+        fontname=PTEXT_FONT,
     )
 
 
@@ -212,7 +212,7 @@ def draw_interactive_selection(
         if len(object) < 25:
             ptext.draw(
                 object,
-                (x + 90, y + 18),
+                (x + 80, y + 22),
                 color=Color.BLACK.value,
                 fontname=PTEXT_FONT,
                 fontsize=22,
@@ -221,7 +221,7 @@ def draw_interactive_selection(
         else:
             ptext.drawbox(
                 object,
-                (x + 90, y + 10, 265, 45),
+                (x + 80, y + 10, 280, 45),
                 align="left",
                 color=Color.BLACK.value,
                 fontname=PTEXT_FONT,

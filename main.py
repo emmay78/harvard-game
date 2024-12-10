@@ -74,6 +74,42 @@ courses_enrolled = False
 choice = 0
 displaying_warning = False
 
+
+def reset():
+    global category_scores, category_warning_count, phil_scores, current_course_selection
+    global current_club_selection, current_selection, courses_enrolled, choice
+    global displaying_warning, week, day, current_state
+
+    category_scores = {
+        "school": 0,
+        "fun": 0,
+        "rest": 0,
+    }
+
+    category_warning_count = {
+        "school": 0,
+        "fun": 0,
+        "rest": 0,
+    }
+
+    phil_scores = {
+        "mengzi": 0,
+        "xunzi": 0,
+        "zhuangzi": 0,
+        "shangyang": 0,
+        "laozi": 0,
+    }
+
+    current_course_selection = []
+    current_club_selection = []
+    current_selection = []
+    courses_enrolled = False
+    choice = 0
+    displaying_warning = False
+    week = 0
+    day = "SUNDAY"
+
+
 while running:
     window.fill(Color.LINEN.value)
     if current_state == GameState.INIT_0:
@@ -185,7 +221,8 @@ while running:
                                     event.key == pygame.K_RETURN
                                     or event.key == pygame.K_SPACE
                                 ):
-                                    running = False
+                                    current_state = GameState.INIT_0
+                                    reset()
                     else:
                         choice += 1
                         current_course_selection = []
@@ -220,6 +257,6 @@ while running:
                         running = False
 
     pygame.display.update()
-    clock.tick(30)
+    clock.tick(60)
 
 pygame.quit()

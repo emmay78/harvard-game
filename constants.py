@@ -2,12 +2,9 @@ from functools import partial
 import pygame
 from enum import Enum
 
-FONT = partial(pygame.font.Font, "fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf")
-BOLD_FONT = partial(
-    pygame.font.Font, "fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf"
-)
-PTEXT_FONT = "fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf"
-PTEXT_BOLD_FONT = "fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf"
+PTEXT_FONT = "fonts/Jersey_20/Jersey20-Regular.ttf"
+
+FONT = partial(pygame.font.Font, PTEXT_FONT)
 
 
 class Color(Enum):
