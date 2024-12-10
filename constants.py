@@ -2,7 +2,7 @@ from functools import partial
 import pygame
 from enum import Enum
 
-PTEXT_FONT = "fonts/Jersey_20/Jersey20-Regular.ttf"
+PTEXT_FONT = "fonts/Retro Gaming.ttf"
 
 FONT = partial(pygame.font.Font, PTEXT_FONT)
 
@@ -23,7 +23,7 @@ def update_scores(scores, add):
         scores[k] += v
 
 
-def get_keyboard_selection(list, transition_state, num_selections=4):
+def get_keyboard_selection(list, transition_state, num_selections=2):
     for event in pygame.event.get():
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_1:
@@ -74,7 +74,9 @@ def get_keyboard_selection(list, transition_state, num_selections=4):
                 if num_selections == 1:
                     list.clear()
                     list.append(6)
-            elif event.key == pygame.K_RETURN or event.key == pygame.K_SPACE:
+            elif (event.key == pygame.K_RETURN or event.key == pygame.K_SPACE) and len(
+                list
+            ) == num_selections:
                 return transition_state
 
 

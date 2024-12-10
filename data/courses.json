@@ -1,6 +1,6 @@
 {
     "fall": {
-        "prompt": "You need to select your classes for the fall semester. Which classes will you take? Select 2 from the following. No courses have any prerequisites, and you don’t need to fulfill the requirements of any concentration. Just pick what speaks to you.",
+        "prompt": "It's fall course registration time! Which classes will you take? No courses have any prerequisites, and you don't need to fulfill the requirements of any concentration. Just pick what speaks to you.\n(Select 2)",
         "options": [
             {
                 "name": "Organismic and Evolutionary Biology 52. Biology of Plants. Holbrook",
@@ -50,7 +50,7 @@
         ]
     },
     "spring": {
-        "prompt": "You need to select your classes for the spring semester. Which classes will you take? Select 2 from the following. No courses have any prerequisites, and you don’t need to fulfill the requirements of any concentration. Just pick what speaks to you.",
+        "prompt": "It's spring course registration time! Which classes will you take? No courses have any prerequisites, and you don't need to fulfill the requirements of any concentration. Just pick what speaks to you.\n(Select 2)",
         "options": [
             {
                 "name": "Religion 116. The Conduct of Life in Eastern and Western Philosophy. Puett",

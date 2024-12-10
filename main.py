@@ -15,6 +15,7 @@ class GameState(Enum):
     PLAY = 4
     COURSES = 5
     STATUS = 6
+    END = 8
 
 
 category_scores = {
@@ -71,7 +72,7 @@ current_course_selection = []
 current_club_selection = []
 current_selection = []
 courses_enrolled = False
-choice = 0
+screen_idx = 0
 displaying_warning = False
 
 
@@ -155,7 +156,7 @@ while running:
             if not courses_enrolled:
                 options = courses["fall" if week == 0 else "spring"]
                 draw_interactive_selection(window, options, current_course_selection)
-                done = get_keyboard_selection(current_course_selection, True, 4)
+                done = get_keyboard_selection(current_course_selection, True, 2)
                 if done:
                     for idx in current_course_selection:
                         course_scores = options["options"][idx - 1]["scores"]
@@ -178,21 +179,22 @@ while running:
         elif week <= 16:
             # Global options
             day = "MONDAY"
-            if choice <= 1:
-                options = global_options[choice]
+            if screen_idx <= 1:
+                options = global_options[screen_idx]
                 draw_interactive_selection(window, options, current_course_selection)
                 # Show status if threshold exceeded
-                if displaying_warning:
+                if displaying_warning > 0:
+                    warning_key = list(category_scores.keys())[displaying_warning - 1]
                     if (
-                        category_scores["school"] < 0
-                        and category_warning_count["school"] == 0
+                        category_scores[warning_key] < 0
+                        and category_warning_count[warning_key] == 0
                     ) or (
-                        category_scores["school"] < -5
-                        and category_warning_count["school"] == 1
+                        category_scores[warning_key] < -5
+                        and category_warning_count[warning_key] == 1
                     ):
                         draw_warning(
                             window,
-                            warnings["school"][category_warning_count["school"]],
+                            warnings[warning_key][category_warning_count[warning_key]],
                             "GOT IT",
                         )
                         for event in pygame.event.get():
@@ -201,18 +203,15 @@ while running:
                                     event.key == pygame.K_RETURN
                                     or event.key == pygame.K_SPACE
                                 ):
-                                    category_warning_count["school"] += 1
-                                    choice += 1
-                                    current_course_selection = []
-                                    random_event = random.choice(random_options)
-                                    displaying_warning = False
+                                    category_warning_count[warning_key] += 1
+                                    displaying_warning -= 1
                     elif (
-                        category_scores["school"] <= -10
-                        and category_warning_count["school"] == 2
+                        category_scores[warning_key] <= -10
+                        and category_warning_count[warning_key] == 2
                     ):
                         draw_warning(
                             window,
-                            warnings["school"][category_warning_count["school"]],
+                            warnings[warning_key][category_warning_count[warning_key]],
                             "GAME OVER",
                         )
                         for event in pygame.event.get():
@@ -224,10 +223,15 @@ while running:
                                     current_state = GameState.INIT_0
                                     reset()
                     else:
-                        choice += 1
+                        displaying_warning -= 1
+
+                    if displaying_warning == 0:
+                        # Transition to the next randomization
+                        screen_idx += 1
                         current_course_selection = []
                         random_event = random.choice(random_options)
-                        displaying_warning = False
+                else:
+                    random_event = random.choice(random_options)
                 done = get_keyboard_selection(current_course_selection, True, 1)
                 if done:
                     for idx in current_course_selection:
@@ -237,7 +241,7 @@ while running:
                         ):
                             course_scores = options["options"][idx - 1][key]
                             update_scores(score_dict, course_scores)
-                    displaying_warning = True
+                    displaying_warning = 3
             else:
                 day = random_event["day"]
                 draw_interactive_selection(window, random_event, current_selection)
@@ -246,15 +250,18 @@ while running:
                     scores = options["options"][current_selection[0] - 1][key]
                     update_scores(phil_scores, scores)
                     week += 1
-                    choice = 0
+                    screen_idx = 0
                     current_selection = []
         else:
-            # End game
-            draw_end_game(window)
-            for event in pygame.event.get():
-                if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_RETURN or event.key == pygame.K_SPACE:
-                        running = False
+            current_state = GameState.END
+    elif current_state == GameState.END:
+        # End game
+        draw_end_game(window, phil_scores=phil_scores, category_scores=category_scores)
+        for event in pygame.event.get():
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RETURN or event.key == pygame.K_SPACE:
+                    current_state = GameState.INIT_0
+                    reset()
 
     pygame.display.update()
     clock.tick(60)

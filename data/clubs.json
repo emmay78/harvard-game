@@ -1,6 +1,6 @@
 {
     "fall": {
-        "prompt": "You also decide to join a club that aligns with your interests. Which club do you join? Assume there is no comp process.",
+        "prompt": "You also decide to join a club that aligns with your interests. Which club do you join? Assume there is no comp process.\n(Select 1)",
         "options": [
             {
                 "name": "Harvard College Consulting Group",
@@ -45,7 +45,7 @@
         ]
     },
     "spring": {
-        "prompt": "You also decide to join a club that aligns with your interests. Which club do you join? Assume there is no comp process.",
+        "prompt": "You also decide to join a club that aligns with your interests. Which club do you join? Assume there is no comp process.\n(Select 1)",
         "options": [
             {
                 "name": "Harvard Financial Analysts Club",

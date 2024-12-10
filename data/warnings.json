@@ -1,12 +1,17 @@
 {
     "school": [
-        "You haven’t been focusing much on your schoolwork lately. You begin to worry about your grades.",
+        "You haven't been focusing much on your schoolwork lately. You begin to worry about your grades.",
         "You have been truant from your schoolwork. Your grades are quite poor.",
-        "You have failed your courses. You’ll have to start the year from scratch."
+        "You have failed your courses. You'll have to start the year from scratch."
     ],
     "fun": [
-        "You haven’t hung out with your friends much lately. You begin to feel lonely.",
-        "You don’t have many friends. You feel isolated and solitary.",
+        "You haven't hung out with your friends much lately. You begin to feel lonely.",
+        "You don't have many friends. You feel isolated and solitary.",
         "You are a social outcast. You feel the need to take a leave, spend some time at home, and start the year again on a new foot."
+    ],
+    "rest": [
+        "You haven’t taken much of a break lately. You begin to feel tired and stressed.",
+        "You are overworking yourself. You feel exhausted and have trouble focusing.",
+        "Your mental health has deteriorated significantly. You feel the need to take a leave, spend some time at home, and start the year again on a new foot."
     ]
 }

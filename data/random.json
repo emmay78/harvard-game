@@ -1,6 +1,6 @@
 [
     {
-        "prompt": "You've got an assignment due on Friday night! What do you do?",
+        "prompt": "You've got an assignment due on Friday night! What do you do?\n(Select 1)",
         "day": "WEDNESDAY",
         "options": [
             {
@@ -46,7 +46,7 @@
         ]
     },
     {
-        "prompt": "You've got a relatively heavy workload this week from one of the clubs you joined, and you need to get it done by the end of the night. What do you do? (Be honest!)",
+        "prompt": "You've got a relatively heavy workload this week from one of the clubs you joined, and you need to get it done by the end of the night. What do you do? (Be honest!)\n(Select 1)",
         "day": "FRIDAY",
         "options": [
             {
@@ -63,7 +63,7 @@
                 }
             },
             {
-                "name": "Mail it in—your work is far from your best, but at least it's done…kind of.",
+                "name": "Mail it in: your work is far from your best, but at least it's done...kind of.",
                 "scores": {
                     "laozi": 1
                 }
@@ -91,7 +91,7 @@
         ]
     },
     {
-        "prompt": "You've been assigned a group project! What do you do?",
+        "prompt": "You've been assigned a group project! What do you do?\n(Select 1)",
         "day": "THURSDAY",
         "options": [
             {
@@ -116,7 +116,7 @@
                 }
             },
             {
-                "name": "Do the whole project by yourself—you can't trust that anyone will do as good of a job as you will.",
+                "name": "Do the whole project by yourself. You can't trust that anyone will do as good of a job as you will.",
                 "scores": {
                     "xunzi": 1,
                     "zhuangzi": 1
@@ -137,7 +137,7 @@
         ]
     },
     {
-        "prompt": "Your club is holding its weekly board meeting! The presidents will be considering board members for promotions at the end of the semester.",
+        "prompt": "Your club is holding its weekly board meeting! The presidents will be considering board members for promotions at the end of the semester.\n(Select 1)",
         "day": "SATURDAY",
         "options": [
             {
@@ -183,7 +183,7 @@
         ]
     },
     {
-        "prompt": "You've been assigned to lead a team project for your club. How do you manage the project?",
+        "prompt": "You've been assigned to lead a team project for your club. How do you manage the project?\n(Select 1)",
         "day": "SATURDAY",
         "options": [
             {
@@ -207,7 +207,7 @@
                 }
             },
             {
-                "name": "Let everyone do their part however they want–you trust them!",
+                "name": "Let everyone do their part however they want, you trust them!",
                 "scores": {
                     "laozi": 1,
                     "zhuangzi": 1
@@ -224,6 +224,52 @@
                 "name": "Encourage maximal collaboration between team members.",
                 "scores": {
                     "mengzi": 1
+                }
+            }
+        ]
+    },
+    {
+        "prompt": "You've got a major exam next week. What do you do?\n(Select 1)",
+        "day": "TUESDAY",
+        "options": [
+            {
+                "name": "Form a study group with your friends from the class.",
+                "scores": {
+                    "mengzi": 1,
+                    "xunzi": 1
+                }
+            },
+            {
+                "name": "Read through your notes once.",
+                "scores": {
+                    "laozi": 1,
+                    "zhuangzi": 1
+                }
+            },
+            {
+                "name": "Read through the solutions to the practice exams.",
+                "scores": {
+                    "laozi": 1,
+                    "mengzi": 1
+                }
+            },
+            {
+                "name": "Redo some pset problems and do a few practice problems.",
+                "scores": {
+                    "shangyang": 1
+                }
+            },
+            {
+                "name": "Create flashcards and test yourself on them over and over.",
+                "scores": {
+                    "xunzi": 1,
+                    "shangyang": 1
+                }
+            },
+            {
+                "name": "Cram study the night before—short-term memory for the win!",
+                "scores": {
+                    "zhuangzi": 1
                 }
             }
         ]

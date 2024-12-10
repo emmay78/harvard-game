@@ -11,7 +11,7 @@ def draw_title(window: pygame.Surface) -> None:
     """
     Draws the Welcome title of the game.
     """
-    font = FONT(36)
+    font = FONT(32)
     text = font.render("WELCOME TO THE HARVARD GAME", True, Color.BLACK.value)
 
     box = pygame.draw.rect(window, Color.RED.value, (120, 61, 669, 88))
@@ -19,7 +19,7 @@ def draw_title(window: pygame.Surface) -> None:
 
 
 def draw_init_text_1(window: pygame.Surface) -> None:
-    text = """Congratulations! You’ve been admitted to Harvard College. A transformative year-long experience awaits you."""
+    text = """Congratulations! You've been admitted to Harvard College. A transformative year-long experience awaits you."""
     ptext.drawbox(
         text,
         (75, 220, 766, 253),
@@ -30,7 +30,7 @@ def draw_init_text_1(window: pygame.Surface) -> None:
 
 
 def draw_init_text_2(window: pygame.Surface) -> None:
-    text = """You've moved into your dorm: a double overlooking Harvard Yard. Your suitemates seem nice, and you hope they’ll become good friends. You’re looking forward to starting classes, joining clubs, and exploring the social scene, all while maintaining a healthy school-life balance."""
+    text = """You've moved into your dorm: a double overlooking Harvard Yard. Your suitemates seem nice, and you hope they'll become good friends. You're looking forward to starting classes, joining clubs, and exploring the social scene, all while maintaining a healthy school-life balance."""
     ptext.drawbox(
         "SEVERAL  MONTHS LATER...",
         (116, 200, 674, 50),
@@ -48,7 +48,7 @@ def draw_init_text_2(window: pygame.Surface) -> None:
 
 
 def draw_init_text_3(window: pygame.Surface) -> None:
-    text = """...you can’t help but feel like your forthcoming decisions are being watched over closely by spirits from the ancient past..."""
+    text = """...you can't help but feel like your forthcoming decisions are being watched over closely by spirits from the ancient past..."""
 
     ptext.drawbox(
         text,
@@ -145,7 +145,7 @@ def draw_bottom_scoreboard(window: pygame.Surface, scores: Dict[str, int]) -> No
     # Scores
     ptext.drawbox(
         f"MENGZI\t{scores['mengzi']}",
-        (30, 660, 150, 30),
+        (30, 660, 140, 30),
         align="center",
         color=Color.BLACK.value,
         fontname=PTEXT_FONT,
@@ -153,7 +153,7 @@ def draw_bottom_scoreboard(window: pygame.Surface, scores: Dict[str, int]) -> No
 
     ptext.drawbox(
         f"XUNZI\t{scores['xunzi']}",
-        (180, 660, 182, 30),
+        (200, 660, 120, 30),
         align="center",
         color=Color.BLACK.value,
         fontname=PTEXT_FONT,
@@ -161,7 +161,7 @@ def draw_bottom_scoreboard(window: pygame.Surface, scores: Dict[str, int]) -> No
 
     ptext.drawbox(
         f"ZHUANGZI\t{scores['zhuangzi']}",
-        (360, 660, 182, 30),
+        (350, 660, 160, 30),
         align="center",
         color=Color.BLACK.value,
         fontname=PTEXT_FONT,
@@ -169,7 +169,7 @@ def draw_bottom_scoreboard(window: pygame.Surface, scores: Dict[str, int]) -> No
 
     ptext.drawbox(
         f"SHANG YANG\t{scores['shangyang']}",
-        (555, 660, 182, 30),
+        (540, 660, 182, 30),
         align="center",
         color=Color.BLACK.value,
         fontname=PTEXT_FONT,
@@ -177,7 +177,7 @@ def draw_bottom_scoreboard(window: pygame.Surface, scores: Dict[str, int]) -> No
 
     ptext.drawbox(
         f"LAOZI\t{scores['laozi']}",
-        (730, 660, 182, 30),
+        (760, 660, 110, 30),
         align="center",
         color=Color.BLACK.value,
         fontname=PTEXT_FONT,
@@ -188,6 +188,14 @@ def draw_time_counter(window: pygame.Surface, week: int, day: int) -> None:
     ptext.drawbox(
         f"WEEK: {week}",
         (7, 76, 141, 35),
+        align="center",
+        color=Color.BLACK.value,
+        fontname=PTEXT_FONT,
+    )
+
+    ptext.drawbox(
+        f"SEMESTER: {"SPRING" if week > 8 else "FALL"}",
+        (321, 76, 270, 35),
         align="center",
         color=Color.BLACK.value,
         fontname=PTEXT_FONT,
@@ -215,13 +223,13 @@ def draw_interactive_selection(
                 (x + 80, y + 22),
                 color=Color.BLACK.value,
                 fontname=PTEXT_FONT,
-                fontsize=22,
+                fontsize=18,
                 align="left",
             )
         else:
             ptext.drawbox(
                 object,
-                (x + 80, y + 10, 280, 45),
+                (x + 80, y + 10, 300, 50),
                 align="left",
                 color=Color.BLACK.value,
                 fontname=PTEXT_FONT,
@@ -236,7 +244,7 @@ def draw_interactive_selection(
             (x + 29, y + 17, 32, 32),
             align="center",
             color=Color.BLACK.value,
-            fontname=PTEXT_BOLD_FONT,
+            fontname=PTEXT_FONT,
         )
 
     coordinates = [
@@ -253,7 +261,7 @@ def draw_interactive_selection(
 
     ptext.drawbox(
         options["prompt"],
-        (26, 127, 849, 100),
+        (30, 120, 845, 110),
         align="center",
         color=Color.BLACK.value,
         fontname=PTEXT_FONT,
@@ -279,7 +287,7 @@ def draw_interactive_selection(
     )
     ptext.drawbox(
         "PRESS ENTER OR SPACE",
-        (620, 570, 163, 30),
+        (620, 570, 180, 30),
         align="center",
         color=Color.BLACK.value,
         fontname=PTEXT_FONT,
@@ -310,6 +318,87 @@ def draw_warning(window, message, button):
     ptext.drawbox(
         "PRESS ENTER OR SPACE",
         (298, 448, 307, 17),
+        align="center",
+        color=Color.BLACK.value,
+        fontname=PTEXT_FONT,
+    )
+
+
+def draw_end_game(window, phil_scores, category_scores):
+    box = pygame.draw.rect(window, Color.RED.value, (112, 52, 669, 88))
+    font = FONT(36)
+    text = font.render("CONGRATULATIONS!", True, Color.BLACK.value)
+    window.blit(text, text.get_rect(center=box.center))
+
+    ptext.drawbox(
+        "You've completed your first year at Harvard!",
+        (117, 175, 674, 102),
+        align="center",
+        color=Color.BLACK.value,
+        fontname=PTEXT_FONT,
+    )
+
+    ptext.drawbox(
+        f"SCHOOL\t{category_scores['school']}",
+        (60, 313, 300, 30),
+        align="center",
+        color=Color.BLACK.value,
+        fontname=PTEXT_FONT,
+    )
+    ptext.drawbox(
+        f"FUN\t{category_scores['fun']}",
+        (310, 313, 300, 30),
+        align="center",
+        color=Color.BLACK.value,
+        fontname=PTEXT_FONT,
+    )
+    ptext.drawbox(
+        f"REST\t{category_scores['rest']}",
+        (550, 313, 300, 30),
+        align="center",
+        color=Color.BLACK.value,
+        fontname=PTEXT_FONT,
+    )
+
+    ptext.drawbox(
+        "WOULD THE PHILOSOPHERS APPROVE OF THE CHOICES YOU'VE MADE?",
+        (77, 369, 754, 85),
+        align="center",
+        color=Color.BLACK.value,
+        fontname=PTEXT_FONT,
+    )
+
+    sorted_scores = dict(
+        sorted(phil_scores.items(), key=lambda item: item[1], reverse=True)
+    )
+    coordinates = [
+        (126, 481),
+        (324, 481),
+        (555, 481),
+        (252, 530),
+        (493, 530),
+    ]
+
+    for idx, (phil, score) in enumerate(sorted_scores.items()):
+        ptext.drawbox(
+            f"{phil.upper()}\t{score}",
+            coordinates[idx] + (200, 30),
+            align="center",
+            color=Color.BLACK.value if idx > 0 else Color.RED.value,
+            fontname=PTEXT_FONT,
+        )
+
+    font = FONT(30)
+    text = font.render("PLAY AGAIN", True, Color.BLACK.value)
+
+    box = pygame.draw.rect(
+        window, Color.SEAGREEN.value, (165, 586, 579, 58), border_radius=40
+    )
+    window.blit(text, text.get_rect(center=box.center))
+
+    ptext.drawbox(
+        "PRESS ENTER OR SPACE",
+        (186, 659, 523, 22),
         align="center",
         color=Color.BLACK.value,
         fontname=PTEXT_FONT,
