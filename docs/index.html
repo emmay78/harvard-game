@@ -168,7 +168,7 @@ async def custom_site():
     if not platform.window.MM.UME:
 
         # now make a prompt
-        fnt = pygame.font.Font("../fonts/Retro Gaming.ttf",  uy(80) )
+        fnt = pygame.sysfont.SysFont("freesans",  uy(80) )
         prompt = fnt.render("Click to begin!", True, "black")
         pg_bar(track.len)
         screen.blit(prompt, ( marginx+ ux(80), marginy - uy(10) ) )
