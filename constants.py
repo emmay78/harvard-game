@@ -76,7 +76,7 @@ def get_keyboard_selection(list, transition_state, num_selections=4):
                 if num_selections == 1:
                     list.clear()
                     list.append(6)
-            elif event.key == pygame.K_RETURN:
+            elif event.key == pygame.K_RETURN or event.key == pygame.K_SPACE:
                 return transition_state
 
 

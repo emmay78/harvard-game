@@ -72,7 +72,7 @@ while running:
 
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_RETURN:
+                if event.key == pygame.K_RETURN or event.key == pygame.K_SPACE:
                     current_state = GameState.INIT_1
     elif current_state == GameState.INIT_1:
         draw_title(window)
@@ -80,7 +80,7 @@ while running:
         draw_next_button(window)
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_RETURN:
+                if event.key == pygame.K_RETURN or event.key == pygame.K_SPACE:
                     current_state = GameState.INIT_2
     elif current_state == GameState.INIT_2:
         draw_title(window)
@@ -88,7 +88,7 @@ while running:
         draw_interesting_button(window)
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_RETURN:
+                if event.key == pygame.K_RETURN or event.key == pygame.K_SPACE:
                     current_state = GameState.PLAY
     elif current_state == GameState.PLAY:
         draw_top_scoreboard(window, category_scores)

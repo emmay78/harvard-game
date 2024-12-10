@@ -69,8 +69,8 @@ def draw_next_button(window: pygame.Surface) -> None:
     window.blit(text, text.get_rect(center=box.center))
 
     ptext.drawbox(
-        "PRESS ENTER TO CONTINUE",
-        (186, 616, 523, 22),
+        "PRESS ENTER OR SPACE TO CONTINUE",
+        (195, 616, 523, 32),
         align="center",
         color=Color.BLACK.value,
         fontname=PTEXT_FONT,
@@ -87,8 +87,8 @@ def draw_interesting_button(window: pygame.Surface) -> None:
     window.blit(text, text.get_rect(center=box.center))
 
     ptext.drawbox(
-        "PRESS ENTER TO CONTINUE",
-        (186, 616, 523, 22),
+        "PRESS ENTER OR SPACE TO CONTINUE",
+        (195, 616, 523, 32),
         align="center",
         color=Color.BLACK.value,
         fontname=PTEXT_FONT,
@@ -246,10 +246,10 @@ def draw_interactive_selection(
         color=Color.BLACK.value,
         fontname=PTEXT_FONT,
     )
-    select_class_2 = """USE THE KEYBOARD TO SELECT YOUR CHOICE"""
+    select_class_2 = """USE THE NUMBERS ON THE KEYBOARD TO SELECT YOUR CHOICE"""
     ptext.drawbox(
         select_class_2,
-        (204, 238, 500, 17),
+        (104, 236, 700, 25),
         align="center",
         color=Color.BLACK.value,
         fontname=PTEXT_FONT,
@@ -266,8 +266,8 @@ def draw_interactive_selection(
         fontname=PTEXT_FONT,
     )
     ptext.drawbox(
-        "PRESS ENTER",
-        (604, 577, 163, 17),
+        "PRESS ENTER OR SPACE",
+        (620, 570, 163, 30),
         align="center",
         color=Color.BLACK.value,
         fontname=PTEXT_FONT,
