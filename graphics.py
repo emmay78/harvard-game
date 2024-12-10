@@ -191,6 +191,7 @@ def draw_time_counter(window: pygame.Surface, week: int, day: int) -> None:
         align="center",
         color=Color.BLACK.value,
         fontname=PTEXT_FONT,
+        background=Color.YELLOW.value,
     )
 
     ptext.drawbox(
@@ -207,6 +208,7 @@ def draw_time_counter(window: pygame.Surface, week: int, day: int) -> None:
         align="center",
         color=Color.BLACK.value,
         fontname=PTEXT_FONT,
+        background=Color.YELLOW.value,
     )
 
 
