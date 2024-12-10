@@ -44,6 +44,8 @@ os.environ["SDL_VIDEO_CENTERED"] = "1"
 pygame.init()
 window = pygame.display.set_mode((908, 712))
 pygame.display.set_caption("The Harvard Game")
+programIcon = pygame.image.load("icon.png")
+pygame.display.set_icon(programIcon)
 clock = pygame.time.Clock()
 
 running = True

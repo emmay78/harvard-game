@@ -372,7 +372,7 @@ def draw_end_game(window, phil_scores, category_scores):
         sorted(phil_scores.items(), key=lambda item: item[1], reverse=True)
     )
     coordinates = [
-        (126, 481),
+        (100, 481),
         (324, 481),
         (555, 481),
         (252, 530),
@@ -382,7 +382,7 @@ def draw_end_game(window, phil_scores, category_scores):
     for idx, (phil, score) in enumerate(sorted_scores.items()):
         ptext.drawbox(
             f"{phil.upper()}\t{score}",
-            coordinates[idx] + (200, 30),
+            coordinates[idx] + (200, 40),
             align="center",
             color=Color.BLACK.value if idx > 0 else Color.RED.value,
             fontname=PTEXT_FONT,
