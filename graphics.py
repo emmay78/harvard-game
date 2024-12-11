@@ -388,9 +388,9 @@ def draw_end_game(window, phil_scores, category_scores):
     )
 
     coordinates = [
-        (120, 500),
+        (100, 500),
         (360, 500),
-        (580, 500),
+        (600, 500),
         (252, 540),
         (510, 540),
     ]

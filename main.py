@@ -287,9 +287,12 @@ while running:
                 if done:
                     scores = options["options"][current_selection[0] - 1][key]
                     update_scores(phil_scores, scores)
-                    week += 1
-                    screen_idx = 0
-                    current_selection = []
+                    if week < 20:
+                        week += 1
+                        screen_idx = 0
+                        current_selection = []
+                    else:
+                        current_state = GameState.END
         else:
             current_state = GameState.END
     elif current_state == GameState.END:
