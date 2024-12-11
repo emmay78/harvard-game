@@ -20,8 +20,8 @@ class GameState(Enum):
 
 category_scores = {
     "school": 0,
-    "fun": 0,
-    "rest": 0,
+    "fun": 5,
+    "rest": 10,
 }
 
 category_warning_count = {
@@ -181,7 +181,7 @@ while running:
         elif week <= 20:
             # Global options
             day = "MONDAY"
-            if screen_idx <= 1:
+            if screen_idx == 0:
                 options = global_options[screen_idx]
                 draw_interactive_selection(window, options, current_course_selection)
                 # Show status if threshold exceeded
@@ -234,7 +234,7 @@ while running:
                         random_event = random.choice(random_options)
                 else:
                     random_event = random.choice(random_options)
-                done = get_keyboard_selection(current_course_selection, True, 1)
+                done = get_keyboard_selection(current_course_selection, True, 2)
                 if done:
                     for idx in current_course_selection:
                         for key, score_dict in zip(
