@@ -204,6 +204,7 @@ while running:
                                 if (
                                     event.key == pygame.K_RETURN
                                     or event.key == pygame.K_SPACE
+                                    or event.key == pygame.K_KP_ENTER
                                 ):
                                     category_warning_count[warning_key] += 1
                                     displaying_warning -= 1
@@ -221,6 +222,7 @@ while running:
                                 if (
                                     event.key == pygame.K_RETURN
                                     or event.key == pygame.K_SPACE
+                                    or event.key == pygame.K_KP_ENTER
                                 ):
                                     current_state = GameState.INIT_0
                                     reset()
