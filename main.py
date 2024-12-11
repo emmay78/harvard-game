@@ -34,7 +34,7 @@ phil_scores = {
     "mengzi": 0,
     "xunzi": 0,
     "zhuangzi": 0,
-    "shangyang": 0,
+    "lord shang": 0,
     "laozi": 0,
 }
 
@@ -99,7 +99,7 @@ def reset():
         "mengzi": 0,
         "xunzi": 0,
         "zhuangzi": 0,
-        "shangyang": 0,
+        "lord shang": 0,
         "laozi": 0,
     }
 

@@ -169,7 +169,7 @@ def draw_bottom_scoreboard(window: pygame.Surface, scores: Dict[str, int]) -> No
     )
 
     ptext.drawbox(
-        f"LORD SHANG\t{scores['shangyang']}",
+        f"LORD SHANG\t{scores['lord shang']}",
         (540, 660, 182, 30),
         align="center",
         color=Color.BLACK.value,
@@ -389,7 +389,7 @@ def draw_end_game(window, phil_scores, category_scores):
 
     coordinates = [
         (100, 500),
-        (360, 500),
+        (370, 500),
         (600, 500),
         (252, 540),
         (510, 540),
