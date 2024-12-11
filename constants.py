@@ -26,7 +26,7 @@ def update_scores(scores, add):
 def get_keyboard_selection(list, transition_state, num_selections=2):
     for event in pygame.event.get():
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_1:
+            if event.key == pygame.K_1 or event.key == pygame.K_KP1:
                 if 1 not in list and len(list) < num_selections:
                     list.append(1)
                 elif 1 in list:
@@ -34,7 +34,7 @@ def get_keyboard_selection(list, transition_state, num_selections=2):
                 if num_selections == 1:
                     list.clear()
                     list.append(1)
-            elif event.key == pygame.K_2:
+            elif event.key == pygame.K_2 or event.key == pygame.K_KP2:
                 if 2 not in list and len(list) < num_selections:
                     list.append(2)
                 elif 2 in list:
@@ -42,7 +42,7 @@ def get_keyboard_selection(list, transition_state, num_selections=2):
                 if num_selections == 1:
                     list.clear()
                     list.append(2)
-            elif event.key == pygame.K_3:
+            elif event.key == pygame.K_3 or event.key == pygame.K_KP3:
                 if 3 not in list and len(list) < num_selections:
                     list.append(3)
                 elif 3 in list:
@@ -50,7 +50,7 @@ def get_keyboard_selection(list, transition_state, num_selections=2):
                 if num_selections == 1:
                     list.clear()
                     list.append(3)
-            elif event.key == pygame.K_4:
+            elif event.key == pygame.K_4 or event.key == pygame.K_KP4:
                 if 4 not in list and len(list) < num_selections:
                     list.append(4)
                 elif 4 in list:
@@ -58,7 +58,7 @@ def get_keyboard_selection(list, transition_state, num_selections=2):
                 if num_selections == 1:
                     list.clear()
                     list.append(4)
-            elif event.key == pygame.K_5:
+            elif event.key == pygame.K_5 or event.key == pygame.K_KP5:
                 if 5 not in list and len(list) < num_selections:
                     list.append(5)
                 elif 5 in list:
@@ -66,7 +66,7 @@ def get_keyboard_selection(list, transition_state, num_selections=2):
                 if num_selections == 1:
                     list.clear()
                     list.append(5)
-            elif event.key == pygame.K_6:
+            elif event.key == pygame.K_6 or event.key == pygame.K_KP6:
                 if 6 not in list and len(list) < num_selections:
                     list.append(6)
                 elif 6 in list:
@@ -74,9 +74,11 @@ def get_keyboard_selection(list, transition_state, num_selections=2):
                 if num_selections == 1:
                     list.clear()
                     list.append(6)
-            elif (event.key == pygame.K_RETURN or event.key == pygame.K_SPACE) and len(
-                list
-            ) == num_selections:
+            elif (
+                event.key == pygame.K_RETURN
+                or event.key == pygame.K_SPACE
+                or event.key == pygame.K_KP_ENTER
+            ) and len(list) == num_selections:
                 return transition_state
 
 
