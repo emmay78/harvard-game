@@ -1,5 +1,51 @@
 [
     {
+        "prompt": "You've got a major exam next week. What do you do?\n(Select 1)",
+        "day": "TUESDAY",
+        "options": [
+            {
+                "name": "Form a study group with your friends from the class.",
+                "scores": {
+                    "mengzi": 1,
+                    "xunzi": 1
+                }
+            },
+            {
+                "name": "Read through your notes once.",
+                "scores": {
+                    "laozi": 1,
+                    "zhuangzi": 1
+                }
+            },
+            {
+                "name": "Read through the solutions to the practice exams.",
+                "scores": {
+                    "laozi": 1,
+                    "mengzi": 1
+                }
+            },
+            {
+                "name": "Redo some pset problems and do a few practice problems.",
+                "scores": {
+                    "shangyang": 1
+                }
+            },
+            {
+                "name": "Create flashcards and test yourself on them over and over.",
+                "scores": {
+                    "xunzi": 1,
+                    "shangyang": 1
+                }
+            },
+            {
+                "name": "Cram study the night before—short-term memory for the win!",
+                "scores": {
+                    "zhuangzi": 1
+                }
+            }
+        ]
+    },
+    {
         "prompt": "You've got an assignment due on Friday night! What do you do?\n(Select 1)",
         "day": "WEDNESDAY",
         "options": [
@@ -41,51 +87,6 @@
                 "name": "Push it out of your mind until Friday night: the Way will guide you to the right moment to start.",
                 "scores": {
                     "laozi": 1
-                }
-            }
-        ]
-    },
-    {
-        "prompt": "You've got a relatively heavy workload this week from one of the clubs you joined, and you need to get it done by the end of the night. What do you do? (Be honest!)\n(Select 1)",
-        "day": "FRIDAY",
-        "options": [
-            {
-                "name": "Cancel the plans you made with your friends for the evening.",
-                "scores": {
-                    "zhuangzi": 1
-                }
-            },
-            {
-                "name": "Email your TF from one of your classes to take an extension on an upcoming assignment.",
-                "scores": {
-                    "xunzi": 1,
-                    "mengzi": 1
-                }
-            },
-            {
-                "name": "Mail it in: your work is far from your best, but at least it's done...kind of.",
-                "scores": {
-                    "laozi": 1
-                }
-            },
-            {
-                "name": "Text your friends from the club to see if they can help you finish the task on time.",
-                "scores": {
-                    "mengzi": 1
-                }
-            },
-            {
-                "name": "Don't finish the task on time—it's not graded, and there's always next week!",
-                "scores": {
-                    "laozi": 1,
-                    "zhuangzi": 1
-                }
-            },
-            {
-                "name": "Plan ahead meticulously so you already finished the task the day after it was announced.",
-                "scores": {
-                    "xunzi": 1,
-                    "shangyang": 1
                 }
             }
         ]
@@ -137,6 +138,97 @@
         ]
     },
     {
+        "prompt": "You've got a relatively heavy workload this week from one of the clubs you joined, and you need to get it done by the end of the night. What do you do? (Be honest!)\n(Select 1)",
+        "day": "FRIDAY",
+        "options": [
+            {
+                "name": "Cancel the plans you made with your friends for the evening.",
+                "scores": {
+                    "zhuangzi": 1
+                }
+            },
+            {
+                "name": "Email your TF from one of your classes to take an extension on an upcoming assignment.",
+                "scores": {
+                    "xunzi": 1,
+                    "mengzi": 1
+                }
+            },
+            {
+                "name": "Mail it in: your work is far from your best, but at least it's done...kind of.",
+                "scores": {
+                    "laozi": 1
+                }
+            },
+            {
+                "name": "Text your friends from the club to see if they can help you finish the task on time.",
+                "scores": {
+                    "mengzi": 1
+                }
+            },
+            {
+                "name": "Don't finish the task on time...it's not graded, and there's always next week!",
+                "scores": {
+                    "laozi": 1,
+                    "zhuangzi": 1
+                }
+            },
+            {
+                "name": "Plan ahead meticulously so you already finished the task the day after it was announced.",
+                "scores": {
+                    "xunzi": 1,
+                    "shangyang": 1
+                }
+            }
+        ]
+    },
+    {
+        "prompt": "You've been invited to a party! What do you do?\n(Select 1)",
+        "day": "FRIDAY",
+        "options": [
+            {
+                "name": "You’ve been invited to a party! What do you do?",
+                "scores": {
+                    "xunzi": 1,
+                    "zhuangzi": 1
+                }
+            },
+            {
+                "name": "Don’t go…need to focus on homework!",
+                "scores": {
+                    "shangyang": 1,
+                    "mengzi": 1
+                }
+            },
+            {
+                "name": "Flip a coin…heads you go, tails you don’t.",
+                "scores": {
+                    "laozi": 1
+                }
+            },
+            {
+                "name": "Go and get a little too drunk.",
+                "scores": {
+                    "zhuangzi": 1
+                }
+            },
+            {
+                "name": "Go and look for someone cute to talk to.",
+                "scores": {
+                    "laozi": 1,
+                    "mengzi": 1
+                }
+            },
+            {
+                "name": "Go and study the sociological phenomenon of finals clubs.",
+                "scores": {
+                    "xunzi": 1,
+                    "shangyang": 1
+                }
+            }
+        ]
+    },
+    {
         "prompt": "Your club is holding its weekly board meeting! The presidents will be considering board members for promotions at the end of the semester.\n(Select 1)",
         "day": "SATURDAY",
         "options": [
@@ -183,8 +275,8 @@
         ]
     },
     {
-        "prompt": "You've been assigned to lead a team project for your club. How do you manage the project?\n(Select 1)",
-        "day": "SATURDAY",
+        "prompt": "You’ve been assigned to lead a team project for your club. How do you manage the project?\n(Select 1)",
+        "day": "SUNDAY",
         "options": [
             {
                 "name": "Be honest about your concerns for the project and seek the opinions of your teammates.",
@@ -207,69 +299,69 @@
                 }
             },
             {
-                "name": "Let everyone do their part however they want, you trust them!",
+                "name": "Let everyone do their part however they want...you trust them!",
                 "scores": {
                     "laozi": 1,
                     "zhuangzi": 1
                 }
             },
             {
-                "name": "Assign parts of the project based on each person's interests and strengths.",
+                "name": "Assign parts of the project based on each person’s interests and strengths.",
                 "scores": {
-                    "zhuangzi": 1,
+                    "mengzi": 1,
                     "laozi": 1
                 }
             },
             {
                 "name": "Encourage maximal collaboration between team members.",
                 "scores": {
-                    "mengzi": 1
+                    "zhuangzi": 1
                 }
             }
         ]
     },
     {
-        "prompt": "You've got a major exam next week. What do you do?\n(Select 1)",
-        "day": "TUESDAY",
+        "prompt": "You’ve got some free time. How do you spend it?\n(Select 1)",
+        "day": "SUNDAY",
         "options": [
             {
-                "name": "Form a study group with your friends from the class.",
+                "name": "Scrolling on your app of choice.",
                 "scores": {
-                    "mengzi": 1,
+                    "laozi": 1,
                     "xunzi": 1
                 }
             },
             {
-                "name": "Read through your notes once.",
+                "name": "Watch a YouTube video.",
                 "scores": {
-                    "laozi": 1,
-                    "zhuangzi": 1
+                    "zhuangzi": 1,
+                    "laozi": 1
                 }
             },
             {
-                "name": "Read through the solutions to the practice exams.",
-                "scores": {
-                    "laozi": 1,
-                    "mengzi": 1
-                }
-            },
-            {
-                "name": "Redo some pset problems and do a few practice problems.",
-                "scores": {
-                    "shangyang": 1
-                }
-            },
-            {
-                "name": "Create flashcards and test yourself on them over and over.",
+                "name": "Free time is just more time for work!",
                 "scores": {
                     "xunzi": 1,
                     "shangyang": 1
                 }
             },
             {
-                "name": "Cram study the night before—short-term memory for the win!",
+                "name": "Time to hit the gym!",
                 "scores": {
-                    "zhuangzi": 1
+                    "shangyang": 1,
+                    "mengzi": 1
+                }
+            },
+            {
+                "name": "Go for a walk or bike ride.",
+                "scores": {
+                    "xunzi": 1
+                }
+            },
+            {
+                "name": "Hang out with your friends.",
+                "scores": {
+                    "mengzi": 1
                 }
             }
         ]
