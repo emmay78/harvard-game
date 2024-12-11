@@ -85,8 +85,8 @@ def reset():
 
     category_scores = {
         "school": 0,
-        "fun": 0,
-        "rest": 0,
+        "fun": 5,
+        "rest": 10,
     }
 
     category_warning_count = {
@@ -111,6 +111,22 @@ def reset():
     displaying_warning = False
     week = 0
     day = "SUNDAY"
+
+
+def reset_category():
+    global category_scores, category_warning_count
+
+    category_scores = {
+        "school": 0,
+        "fun": 5,
+        "rest": 10,
+    }
+
+    category_warning_count = {
+        "school": 0,
+        "fun": 0,
+        "rest": 0,
+    }
 
 
 while running:
@@ -194,6 +210,8 @@ while running:
                     courses_enrolled = False
                     week += 1
                     day = "MONDAY"
+                    reset_category()
+
         elif week <= 20:
             # Global options
             day = "MONDAY"
