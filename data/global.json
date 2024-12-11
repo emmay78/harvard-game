@@ -5,8 +5,9 @@
             {
                 "name": "Going to lectures, sections, and office hours",
                 "category_scores": {
-                    "school": 2,
-                    "fun": -1
+                    "school": 1,
+                    "fun": -1,
+                    "rest": -1
                 },
                 "phil_scores": {
                     "zhuangzi": 1
@@ -16,7 +17,8 @@
                 "name": "Doing homework",
                 "category_scores": {
                     "school": 2,
-                    "fun": -1
+                    "fun": -1,
+                    "rest": -1
                 },
                 "phil_scores": {
                     "xunzi": 1,
@@ -27,7 +29,7 @@
                 "name": "Joining a new club",
                 "category_scores": {
                     "fun": 2,
-                    "rest": -1
+                    "rest": -2
                 },
                 "phil_scores": {
                     "mengzi": 1,
@@ -38,7 +40,7 @@
                 "name": "Putting in work for a club you've already joined",
                 "category_scores": {
                     "fun": 2,
-                    "rest": -1
+                    "rest": -2
                 },
                 "phil_scores": {
                     "mengzi": 1,
@@ -49,7 +51,8 @@
                 "name": "Going out with friends",
                 "category_scores": {
                     "fun": 2,
-                    "school": -1
+                    "school": -1,
+                    "rest": 1
                 },
                 "phil_scores": {
                     "laozi": 1
