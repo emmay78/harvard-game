@@ -122,7 +122,11 @@ while running:
 
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_RETURN or event.key == pygame.K_SPACE:
+                if (
+                    event.key == pygame.K_RETURN
+                    or event.key == pygame.K_SPACE
+                    or event.key == pygame.K_KP_ENTER
+                ):
                     current_state = GameState.INIT_1
     elif current_state == GameState.INIT_1:
         draw_title(window)
@@ -130,7 +134,11 @@ while running:
         draw_next_button(window)
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_RETURN or event.key == pygame.K_SPACE:
+                if (
+                    event.key == pygame.K_RETURN
+                    or event.key == pygame.K_SPACE
+                    or event.key == pygame.K_KP_ENTER
+                ):
                     current_state = GameState.INIT_2
     elif current_state == GameState.INIT_2:
         draw_title(window)
@@ -138,7 +146,11 @@ while running:
         draw_interesting_button(window)
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_RETURN or event.key == pygame.K_SPACE:
+                if (
+                    event.key == pygame.K_RETURN
+                    or event.key == pygame.K_SPACE
+                    or event.key == pygame.K_KP_ENTER
+                ):
                     current_state = GameState.INIT_3
     elif current_state == GameState.INIT_3:
         draw_title(window)
@@ -146,7 +158,11 @@ while running:
         draw_next_button(window)
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_RETURN or event.key == pygame.K_SPACE:
+                if (
+                    event.key == pygame.K_RETURN
+                    or event.key == pygame.K_SPACE
+                    or event.key == pygame.K_KP_ENTER
+                ):
                     current_state = GameState.PLAY
     elif current_state == GameState.PLAY:
         draw_top_scoreboard(window, category_scores)
