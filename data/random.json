@@ -187,21 +187,21 @@
         "day": "FRIDAY",
         "options": [
             {
-                "name": "You’ve been invited to a party! What do you do?",
+                "name": "You've been invited to a party! What do you do?",
                 "scores": {
                     "xunzi": 1,
                     "zhuangzi": 1
                 }
             },
             {
-                "name": "Don’t go…need to focus on homework!",
+                "name": "Don't go…need to focus on homework!",
                 "scores": {
                     "shangyang": 1,
                     "mengzi": 1
                 }
             },
             {
-                "name": "Flip a coin…heads you go, tails you don’t.",
+                "name": "Flip a coin…heads you go, tails you don't.",
                 "scores": {
                     "laozi": 1
                 }
@@ -275,7 +275,7 @@
         ]
     },
     {
-        "prompt": "You’ve been assigned to lead a team project for your club. How do you manage the project?\n(Select 1)",
+        "prompt": "You've been assigned to lead a team project for your club. How do you manage the project?\n(Select 1)",
         "day": "SUNDAY",
         "options": [
             {
@@ -306,7 +306,7 @@
                 }
             },
             {
-                "name": "Assign parts of the project based on each person’s interests and strengths.",
+                "name": "Assign parts of the project based on each person's interests and strengths.",
                 "scores": {
                     "mengzi": 1,
                     "laozi": 1
@@ -321,7 +321,7 @@
         ]
     },
     {
-        "prompt": "You’ve got some free time. How do you spend it?\n(Select 1)",
+        "prompt": "You've got some free time. How do you spend it?\n(Select 1)",
         "day": "SUNDAY",
         "options": [
             {
