@@ -195,7 +195,7 @@ def draw_time_counter(window: pygame.Surface, week: int, day: int) -> None:
     )
 
     ptext.drawbox(
-        f"SEMESTER: {"SPRING" if week > 8 else "FALL"}",
+        f"SEMESTER: {"SPRING" if week > 10 else "FALL"}",
         (321, 76, 270, 35),
         align="center",
         color=Color.BLACK.value,

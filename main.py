@@ -152,7 +152,7 @@ while running:
         draw_top_scoreboard(window, category_scores)
         draw_time_counter(window, week, day)
         draw_bottom_scoreboard(window, phil_scores)
-        if week == 0 or week == 8:
+        if week == 0 or week == 10:
             # Join courses and clubs
             day = "SUNDAY"
             if not courses_enrolled:
@@ -178,7 +178,7 @@ while running:
                     courses_enrolled = False
                     week += 1
                     day = "MONDAY"
-        elif week <= 16:
+        elif week <= 20:
             # Global options
             day = "MONDAY"
             if screen_idx <= 1:
