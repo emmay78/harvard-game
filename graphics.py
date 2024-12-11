@@ -2,6 +2,7 @@ import pygame
 from functools import partial
 from constants import *
 import ptext
+import json
 from typing import Dict, List, Optional
 
 # INIT SCREENS
@@ -327,14 +328,14 @@ def draw_warning(window, message, button):
 
 
 def draw_end_game(window, phil_scores, category_scores):
-    box = pygame.draw.rect(window, Color.RED.value, (112, 52, 669, 88))
+    box = pygame.draw.rect(window, Color.RED.value, (112, 37, 669, 88))
     font = FONT(36)
     text = font.render("CONGRATULATIONS!", True, Color.BLACK.value)
     window.blit(text, text.get_rect(center=box.center))
 
     ptext.drawbox(
         "You've completed your first year at Harvard!",
-        (117, 175, 674, 102),
+        (117, 145, 674, 70),
         align="center",
         color=Color.BLACK.value,
         fontname=PTEXT_FONT,
@@ -342,21 +343,21 @@ def draw_end_game(window, phil_scores, category_scores):
 
     ptext.drawbox(
         f"SCHOOL\t{category_scores['school']}",
-        (60, 313, 300, 30),
+        (60, 242, 300, 30),
         align="center",
         color=Color.BLACK.value,
         fontname=PTEXT_FONT,
     )
     ptext.drawbox(
         f"FUN\t{category_scores['fun']}",
-        (310, 313, 300, 30),
+        (310, 242, 300, 30),
         align="center",
         color=Color.BLACK.value,
         fontname=PTEXT_FONT,
     )
     ptext.drawbox(
         f"REST\t{category_scores['rest']}",
-        (550, 313, 300, 30),
+        (550, 242, 300, 30),
         align="center",
         color=Color.BLACK.value,
         fontname=PTEXT_FONT,
@@ -364,7 +365,7 @@ def draw_end_game(window, phil_scores, category_scores):
 
     ptext.drawbox(
         "WOULD THE PHILOSOPHERS APPROVE OF THE CHOICES YOU'VE MADE?",
-        (77, 369, 754, 85),
+        (77, 290, 754, 85),
         align="center",
         color=Color.BLACK.value,
         fontname=PTEXT_FONT,
@@ -373,18 +374,32 @@ def draw_end_game(window, phil_scores, category_scores):
     sorted_scores = dict(
         sorted(phil_scores.items(), key=lambda item: item[1], reverse=True)
     )
+
+    with open("data/end_messages.json") as f:
+        messages = json.load(f)
+        message = messages[list(sorted_scores.keys())[0]]
+
+    ptext.drawbox(
+        message,
+        (29, 385, 847, 103),
+        align="center",
+        color=Color.BLACK.value,
+        fontname=PTEXT_FONT,
+    )
+
     coordinates = [
-        (100, 481),
-        (324, 481),
-        (555, 481),
-        (252, 530),
-        (493, 530),
+        (120, 500),
+        (360, 500),
+        (580, 500),
+        (252, 540),
+        (510, 540),
     ]
 
     for idx, (phil, score) in enumerate(sorted_scores.items()):
-        ptext.drawbox(
+        ptext.draw(
             f"{phil.upper()}\t{score}",
-            coordinates[idx] + (200, 40),
+            coordinates[idx],
+            fontsize=26,
             align="center",
             color=Color.BLACK.value if idx > 0 else Color.RED.value,
             fontname=PTEXT_FONT,
@@ -394,13 +409,13 @@ def draw_end_game(window, phil_scores, category_scores):
     text = font.render("PLAY AGAIN", True, Color.BLACK.value)
 
     box = pygame.draw.rect(
-        window, Color.SEAGREEN.value, (165, 586, 579, 58), border_radius=40
+        window, Color.SEAGREEN.value, (165, 600, 579, 58), border_radius=40
     )
     window.blit(text, text.get_rect(center=box.center))
 
     ptext.drawbox(
         "PRESS ENTER OR SPACE",
-        (186, 659, 523, 22),
+        (186, 673, 523, 22),
         align="center",
         color=Color.BLACK.value,
         fontname=PTEXT_FONT,
